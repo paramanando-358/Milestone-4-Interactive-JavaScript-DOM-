@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehek Post Commends</title>
+    <style>
+        /* Changed '.' to '#' to target the ID, and fixed 'weight' to 'width' */
+        #mehk-img {
+            height: 300px;
+            width: 300px; 
+            /* object-fit: cover; Optional: Stops the image from looking squished */
+        }
+        .comments{
+            border: 2px solid red;
+            background-color: aquamarine;
+            margin: 10px;
+            padding:10px;
+        }
+        #post-comment-btn {
+    background-color: transparent;
+    color: #28a745;
+    font-weight: 800;            /* Green text */
+    border: 2px solid #28a745; /* Green outline border */
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+#post-comment-btn:hover {
+    background-color: #28a745; /* Fills button on hover */
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Mehek Biswas</h1>
+    <section>
+        <img id="mehk-img" src="../WhatsApp Image 2024-12-14 at 00.19.13_5c12d060.jpg" alt="Mehek Biswas">
+        <br>
+        <h3>Comments here</h3>
+
+        <div id="comments-container">
+            <p class="comments">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, architecto corrupti temporibus est reiciendis minus, suscipit eaque laborum aspernatur obcaecati laudantium earum hic nulla. Possimus modi at dolorum commodi magni.</p>
+            <p class="comments">Saepe corrupti fuga obcaecati eius totam, ea, eaque illum, voluptates fugiat sit autem dolore iusto quam cum aliquam! Esse doloribus cumque pariatur nemo nostrum tenetur deserunt quo quibusdam nisi? Laboriosam?</p>
+            <p class="comments">Corrupti voluptate fugit sit commodi dolorum nulla cupiditate eaque praesentium cum quibusdam, aliquid molestias enim ipsam culpa deserunt dolorem? Nemo, quasi! Quisquam quaerat ipsa, dolorem doloribus officia facere quo alias.</p>
+        </div>
+        <textarea name="" id="text-comment" cols="25" rows="5"></textarea>
+        <br>
+        <button id="post-comment-btn">Post Comment</button>
+    </section>
+    <script>
+        document.getElementById('post-comment-btn')
+        .addEventListener('click',function(){
+            // console.log("clicked");
+
+            const textComment = document.getElementById('text-comment');
+            // console.log(textComment);
+            const newComments =textComment.value;
+            // console.log(newComments);
+
+            const commentsContainer = document.getElementById('comments-container');
+            // console.log(commentsContainer);
+            const commentEle = document.createElement('p');
+            commentEle.classList.add('comments');
+            commentEle.innerText=newComments;
+
+            commentsContainer.appendChild(commentEle);
+            textComment.value='';
+        })
+    </script>
+</body>
+</html>
