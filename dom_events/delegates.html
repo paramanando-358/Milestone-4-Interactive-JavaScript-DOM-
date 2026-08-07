@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegate</title>
+</head>
+
+<body>
+    <h1>Explore the concept of Event Delegate</h1>
+    <ol id="list-item">
+        <li class="item">My Awesome Item -1</li>
+        <li class="item">My Awesome Item -2</li>
+        <li class="item">My Awesome Item -3</li>
+        <li class="item">My Awesome Item -4</li>
+        <li class="item">My Awesome Item -5</li>
+        <li class="item">My Awesome Item -6</li>
+    </ol>
+    <button id="add-item">Add a new item</button>
+    <script>
+        // const items = document.getElementsByClassName('item')
+        // for (const item of items) {
+        //     // console.log(item);
+        //     item.addEventListener('click', function (event) {
+        //         // console.log(event.target)
+        //         event.target.parentNode.removeChild(event.target);
+
+        //     })
+        // }
+        document.getElementById('list-item')
+        .addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target);
+
+        })
+        // add a new item
+        document.getElementById('add-item')
+            .addEventListener('click', function () {
+
+                // parent to be added to 
+                const ol = document.getElementById('list-item');
+                // new item
+                const li = document.createElement('li');
+                li.classList.add('item');
+                li.innerText='Added new item';
+                // add new item
+                ol.appendChild(li);
+            })
+    </script>
+</body>
+
+</html>
